@@ -25,8 +25,9 @@ const Header = () => {
 };
 
 const Container = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0;
+  z-index: 100;
   width: 100%;
   height: 59px;
   border-bottom: 1px solid #e5e8eb;
