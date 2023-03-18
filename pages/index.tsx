@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { BsApple } from 'react-icons/bs';
+import { FaGooglePlay } from 'react-icons/fa';
+import { SlArrowDown } from 'react-icons/sl';
 import Image from 'next/image';
 import main from '../assets/main.png';
 
@@ -10,7 +13,24 @@ const Home = () => {
           <Image alt='main' src={main} className='image' />
         </div>
         <div className='background' />
-        {/* <div className='content-wrapper'></div> */}
+        <div className='content-wrapper'>
+          <div className='content'>
+            <h2>
+              1500만 반려가구의 행복한 공존
+              <br />
+              onlypets에서 쉽고 편리하게
+            </h2>
+            <div className='button-wrapper'>
+              <a>
+                <BsApple />
+                App Store
+              </a>
+              <a>
+                <FaGooglePlay /> Google Play
+              </a>
+            </div>
+          </div>
+        </div>
       </MainScreen>
     </Positioner>
   );
@@ -41,8 +61,56 @@ const MainScreen = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 500px;
+    height: 600px;
     background: linear-gradient(180deg, white 0%, white 59px, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .content-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 200px;
+
+      h2 {
+        width: 100%;
+        margin-bottom: 50px;
+        text-align: center;
+        font-size: 55px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .button-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        a {
+          padding: 15px 25px;
+          border: 1px solid black;
+          border-radius: 70px;
+          font-size: 17px;
+          cursor: pointer;
+        }
+
+        a + a {
+          margin-left: 5px;
+        }
+      }
+    }
   }
 `;
 
