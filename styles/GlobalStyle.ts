@@ -10,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: black;
     }
+    .default-width{
+        max-width: 1140px;
+        margin: 0 auto;
+
+    }
 `;
 
 export default GlobalStyle;
