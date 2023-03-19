@@ -1,11 +1,16 @@
+import { useRef } from 'react';
 import styled from 'styled-components';
 import { BsApple } from 'react-icons/bs';
 import { FaGooglePlay } from 'react-icons/fa';
-import { SlArrowDown } from 'react-icons/sl';
 import Image from 'next/image';
 import main from '../assets/main.png';
 
 const Home = () => {
+  const scrollRef = useRef<any>();
+  const scrollDown = () => {
+    scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <Container>
       <MainSection>
@@ -33,7 +38,7 @@ const Home = () => {
               </div>
             </div>
             <div className='scroll-wrapper'>
-              <button>
+              <button onClick={scrollDown}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -41,7 +46,7 @@ const Home = () => {
             </div>
           </div>
         </MainScreen>
-        <SubScreen>
+        <SubScreen ref={scrollRef}>
           <p className='desc'>
             내 사진첩 속 잠들어 있던, <br /> 나의 반려동물의 모든 순간을 onlypets에 기록하세요. <br /> onlypets와 함께라면 당신의 일상이 새로워질 거예요.
           </p>
@@ -102,9 +107,9 @@ const MainScreen = styled.div`
 
       h2 {
         width: 100%;
-        margin-bottom: 80px;
+        margin-bottom: 70px;
         text-align: center;
-        font-size: 55px;
+        font-size: 60px;
         font-weight: 700;
         line-height: 1.4;
       }
