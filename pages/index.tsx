@@ -23,11 +23,11 @@ const Home = () => {
             <div className='button-wrapper'>
               <a href='https://apps.apple.com/kr/app/'>
                 <BsApple />
-                <span> App Store</span>
+                <p> App Store</p>
               </a>
               <a href='https://play.google.com/store/apps/'>
                 <FaGooglePlay />
-                <span> Google Play</span>
+                <p> Google Play</p>
               </a>
             </div>
           </div>
@@ -99,15 +99,27 @@ const MainScreen = styled.div`
         justify-content: center;
 
         a {
+          display: flex;
+          flex-direction: row;
           padding: 15px 25px;
-          border: 1px solid black;
           border-radius: 70px;
+          background-color: rgba(0, 12, 30, 0.8);
+          color: #fff;
           font-size: 17px;
           cursor: pointer;
+
+          p {
+            margin-left: 10px;
+          }
+        }
+
+        a:hover {
+          background-color: rgb(78, 89, 104);
+          color: #fff;
         }
 
         a + a {
-          margin-left: 5px;
+          margin-left: 10px;
         }
       }
     }
