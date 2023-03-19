@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { BsApple } from 'react-icons/bs';
 import { FaGooglePlay } from 'react-icons/fa';
@@ -7,6 +7,13 @@ import main from '../assets/main.png';
 
 const Home = () => {
   const scrollRef = useRef<any>();
+
+  useEffect(() => {
+    window.onbeforeunload = function pushRefresh() {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   const scrollDown = () => {
     scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
