@@ -59,6 +59,7 @@ const Home = () => {
           </p>
         </SubScreen>
       </MainSection>
+      <SecondSection />
     </Container>
   );
 };
@@ -254,6 +255,11 @@ const SubScreen = styled.div`
     font-weight: 700;
     line-height: 1.6;
   }
+`;
+
+const SecondSection = styled.section`
+  height: 500px;
+  background: #fff;
 `;
 
 export default Home;
