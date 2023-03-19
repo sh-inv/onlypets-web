@@ -31,9 +31,13 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <button>
-            <SlArrowDown />
-          </button>
+          <div className='scroll-wrapper'>
+            <button>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </MainScreen>
     </Positioner>
@@ -126,7 +130,7 @@ const MainScreen = styled.div`
     }
   }
 
-  button {
+  .down-button {
     margin-bottom: 30px;
     padding: 0;
     background: none;
@@ -137,6 +141,76 @@ const MainScreen = styled.div`
     svg {
       color: gray;
       font-size: 30px;
+    }
+  }
+
+  .scroll-wrapper {
+    position: relative;
+    margin-bottom: 100px;
+
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    button span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: scroll 2s infinite;
+      animation: scroll 2s infinite;
+      opacity: 0;
+      box-sizing: border-box;
+    }
+
+    button span:nth-of-type(1) {
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+    }
+
+    button span:nth-of-type(2) {
+      top: 16px;
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+    }
+
+    button span:nth-of-type(3) {
+      top: 32px;
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+
+    @-webkit-keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
   }
 `;
