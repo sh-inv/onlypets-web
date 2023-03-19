@@ -31,6 +31,9 @@ const Home = () => {
               </a>
             </div>
           </div>
+          <button>
+            <SlArrowDown />
+          </button>
         </div>
       </MainScreen>
     </Positioner>
@@ -44,8 +47,6 @@ const Positioner = styled.section`
 `;
 
 const MainScreen = styled.div`
-  position: relative;
-
   .image-wrapper {
     width: auto;
     height: 100vh;
@@ -82,11 +83,11 @@ const MainScreen = styled.div`
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      margin-top: 200px;
+      margin-top: 250px;
 
       h2 {
         width: 100%;
-        margin-bottom: 50px;
+        margin-bottom: 80px;
         text-align: center;
         font-size: 55px;
         font-weight: 700;
@@ -122,6 +123,20 @@ const MainScreen = styled.div`
           margin-left: 10px;
         }
       }
+    }
+  }
+
+  button {
+    margin-bottom: 30px;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    svg {
+      color: gray;
+      font-size: 30px;
     }
   }
 `;
