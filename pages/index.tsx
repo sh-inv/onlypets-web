@@ -21,12 +21,13 @@ const Home = () => {
               onlypets에서 쉽고 편리하게
             </h2>
             <div className='button-wrapper'>
-              <a>
+              <a href='https://apps.apple.com/kr/app/'>
                 <BsApple />
-                App Store
+                <span> App Store</span>
               </a>
-              <a>
-                <FaGooglePlay /> Google Play
+              <a href='https://play.google.com/store/apps/'>
+                <FaGooglePlay />
+                <span> Google Play</span>
               </a>
             </div>
           </div>
@@ -96,7 +97,6 @@ const MainScreen = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: flex-start;
 
         a {
           padding: 15px 25px;
