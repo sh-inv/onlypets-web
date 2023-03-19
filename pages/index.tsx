@@ -7,50 +7,61 @@ import main from '../assets/main.png';
 
 const Home = () => {
   return (
-    <Positioner>
-      <MainScreen>
-        <div className='image-wrapper'>
-          <Image alt='main' src={main} className='image' />
-        </div>
-        <div className='background' />
-        <div className='content-wrapper'>
-          <div className='content'>
-            <h2>
-              1500만 반려가구의 행복한 공존
-              <br />
-              onlypets에서 쉽고 편리하게
-            </h2>
-            <div className='button-wrapper'>
-              <a href='https://apps.apple.com/kr/app/'>
-                <BsApple />
-                <p> App Store</p>
-              </a>
-              <a href='https://play.google.com/store/apps/'>
-                <FaGooglePlay />
-                <p> Google Play</p>
-              </a>
+    <Container>
+      <MainSection>
+        <MainScreen>
+          <div className='image-wrapper'>
+            <Image alt='main' src={main} className='image' />
+          </div>
+          <div className='background' />
+          <div className='content-wrapper'>
+            <div className='content'>
+              <h2>
+                1500만 반려가구의 행복한 공존
+                <br />
+                onlypets에서 쉽고 편리하게
+              </h2>
+              <div className='button-wrapper'>
+                <a href='https://apps.apple.com/kr/app/'>
+                  <BsApple />
+                  <p> App Store</p>
+                </a>
+                <a href='https://play.google.com/store/apps/'>
+                  <FaGooglePlay />
+                  <p> Google Play</p>
+                </a>
+              </div>
+            </div>
+            <div className='scroll-wrapper'>
+              <button>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
             </div>
           </div>
-          <div className='scroll-wrapper'>
-            <button>
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </div>
-      </MainScreen>
-    </Positioner>
+        </MainScreen>
+        <SubScreen>
+          <p className='desc'>
+            내 사진첩 속 잠들어 있던, <br /> 나의 반려동물의 모든 순간을 onlypets에 기록하세요. <br /> onlypets와 함께라면 당신의 일상이 새로워질 거예요.
+          </p>
+        </SubScreen>
+      </MainSection>
+    </Container>
   );
 };
 
-const Positioner = styled.section`
+const Container = styled.div``;
+
+const MainSection = styled.section`
   position: relative;
   width: 100%;
   overflow: hidden;
 `;
 
 const MainScreen = styled.div`
+  position: relative;
+
   .image-wrapper {
     width: auto;
     height: 100vh;
@@ -212,6 +223,24 @@ const MainScreen = styled.div`
         opacity: 0;
       }
     }
+  }
+`;
+
+const SubScreen = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 250px 0;
+  background: #f9fafb;
+
+  .desc {
+    margin-bottom: 50px;
+    color: #191f28;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1.6;
   }
 `;
 
