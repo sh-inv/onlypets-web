@@ -6,7 +6,7 @@ import Image from 'next/image';
 import main from '../assets/main.png';
 
 const Home = () => {
-  const scrollRef = useRef<any>();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.onbeforeunload = function pushRefresh() {
@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
 
   const scrollDown = () => {
-    scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -92,7 +92,7 @@ const MainScreen = styled.div`
     left: 0;
     width: 100%;
     height: 600px;
-    background: linear-gradient(180deg, white 0%, white 59px, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, #fff 0%, #fff 59px, rgba(255, 255, 255, 0) 100%);
   }
 
   .content-wrapper {
@@ -143,7 +143,7 @@ const MainScreen = styled.div`
         }
 
         a:hover {
-          background-color: rgb(78, 89, 104);
+          background-color: #4e5968;
           color: #fff;
         }
 
